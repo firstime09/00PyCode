@@ -1,10 +1,10 @@
-import glob, pickle, cv2, fungsi, pywt
+import glob, pickle, cv2, My_Function, pywt
 
-segment = fungsi.allFunction
-spectrum = fungsi.allFunction
-t_inten = fungsi.allFunction
-t_entro = fungsi.allFunction
-t_energ = fungsi.allFunction
+segment = My_Function.allFunction
+spectrum = My_Function.allFunction
+t_inten = My_Function.allFunction
+t_entro = My_Function.allFunction
+t_energ = My_Function.allFunction
 
 entropy = list()
 energy = list()
