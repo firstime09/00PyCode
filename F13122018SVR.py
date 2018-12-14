@@ -1,11 +1,11 @@
 import pandas as pd
 import numpy as np
-import math, fungsi
+import math, My_Function
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
 from sklearn.model_selection import train_test_split
 
-SVR_Model = fungsi.allFunction
+SVR_Model = My_Function.allFunction
 def rSquared(ActualY, EstimatedY):
 	rScore = (1 - sum((ActualY-EstimatedY)**2) / sum((ActualY-ActualY.mean(axis=0))**2))
 	return float(rScore)
