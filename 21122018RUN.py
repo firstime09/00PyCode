@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 from Modul_Topo import FTEST01
+from Modul_Topo.FORESTS2020 import allFunc
 from Modul_ML.F17122018ML import F2020ML
 
 df = pd.read_excel('C:/Users/user/Dropbox/FORESTS2020/00AllData/Data 580.xlsx')
