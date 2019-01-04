@@ -6,8 +6,8 @@ t_inten = My_Function.allFunction
 t_entro = My_Function.allFunction
 t_energ = My_Function.allFunction
 
-entropy = list()
-energy = list()
+# entropy = list()
+# energy = list()
 
 for image in glob.glob('D:/PyProject/#00Data/S2-DATA_JABON/Foto_Jabon_Run/Hawar/*.jpg'):
     im_info1 = segment.imInput1(image) #--- Area Penyakit
