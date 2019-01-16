@@ -1,11 +1,20 @@
 import math, numpy
 from osgeo import gdal
+from matplotlib import pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 
 class F2020ML:
+    def plot_data(DataX, DataY): #--- Data Visualization 2D 16/01-2019
+        plt.plot(DataX, DataY)
+        plt.title('Data Visualization')
+        plt.xlabel('Data X')
+        plt.ylabel('Data Y')
+        plt.legend(['D1','D2','D3','D4', 'D5', 'D6'])
+        plt.show()
+
     def F2020_RSQRT(ActualY, PredictY): #--- value of r^2 in statistic (04/12-2018)
         rScores = (1 - sum((ActualY - PredictY)**2) / sum((ActualY - ActualY.mean(axis=0))**2))
         return rScores
