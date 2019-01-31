@@ -6,10 +6,10 @@ from Modul_Topo.FORESTS2020 import allFunc
 from Modul_ML.F17122018ML import F2020ML
 
 path = 'C:/Users/user/Dropbox/FORESTS2020/00AllData/Cidanau Dataframe/'
-dfxlx = pd.read_excel(path + 'Cidanau_Remove_Outlyr_From416-to-380.xlsx')
+dfxlx = pd.read_excel(path + 'Cidanau_Try03_New.xlsx')
 # column = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
-column = ['Band_2', 'Band_4', 'Band_6']
-# column = ['Band_3', 'Band_5', 'Band_7']
+column = ['Band_2', 'Band_4', 'Band_6', 'Band_7']
+# column = ['Band_4']
 target = 'frci'
 dfX = pd.DataFrame(dfxlx, columns=column)
 dfY = np.asarray(dfxlx[target])
