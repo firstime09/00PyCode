@@ -5,8 +5,9 @@ from Modul_Topo import FTEST01
 from Modul_Topo.FORESTS2020 import allFunc
 from Modul_ML.F17122018ML import F2020ML
 
-path = 'C:/Users/user/Dropbox/FORESTS2020/00AllData/Cidanau Dataframe/'
-dfxlx = pd.read_excel(path + 'Cidanau_010219_New02.xlsx')
+# path = 'C:/Users/user/Dropbox/FORESTS2020/00AllData/Cidanau Dataframe/'
+path = 'D:/00RCode/Result/'
+dfxlx = pd.read_excel(path + '0402CIDANAU_890.xlsx')
 column = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 # column = ['Band_2', 'Band_3','Band_4', 'Band_5', 'Band_7']
 # column = ['Band_4']
@@ -22,4 +23,4 @@ dfY = np.asarray(dfxlx[target])
 print(dfxlx.head())
 print('Values SVR: ', F2020ML.F2020_SVR(dfX, dfY, 0.3, 4))
 print('Values RFR: ', F2020ML.F2020_RFR(dfX, dfY, 0.3, 4))
-print(F2020ML.plot_data(dfX, dfY))
+# print(F2020ML.plot_data(dfX, dfY))
