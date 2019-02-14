@@ -5,9 +5,9 @@ from Modul_Topo import FTEST01
 from Modul_Topo.FORESTS2020 import allFunc
 from Modul_ML.F17122018ML import F2020ML
 
-path = 'C:/Users/user/Dropbox/FORESTS2020/00AllData/Dataframe Sumatra/'
-# path = 'D:/00RCode/Result/'
-dfxlx = pd.read_excel(path + 'Data_Sumatra_LINE14.xlsx')
+# path = 'C:/Users/user/Dropbox/FORESTS2020/00AllData/Dataframe Sumatra/'
+path = 'D:/00RCode/Result/'
+dfxlx = pd.read_excel(path + 'Pegunungan_Sumatera.xlsx')
 column = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 # column = ['PC1', 'PC2', 'PC3', 'PC4', 'PC5', 'PC6']
 target = 'frci_5m'
@@ -23,4 +23,4 @@ dfY = np.asarray(dfxlx[target])
 print(dfxlx.head())
 print('Values SVR: ', F2020ML.F2020_SVR(dfX, dfY, 0.3, 4))
 print('Values RFR: ', F2020ML.F2020_RFR(dfX, dfY, 0.3, 4))
-print(F2020ML.plot_data(dfX, dfY))
+# print(F2020ML.plot_data(dfX, dfY))
