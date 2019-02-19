@@ -2,14 +2,18 @@ import pandas as pd
 import numpy as np
 from sklearn.svm import SVR
 from matplotlib import pyplot as plt
+from Modul_ML.F17122018ML import F2020ML
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 #--- Load dataframe
 path = 'D:/00RCode/Result/'
-dframe = pd.read_excel(path + 'Pegunungan_Sumatera.xlsx')
-colmn = ['Band_2','Band_3','Band_4','Band_5','Band_6','Band_7']
-trget = 'frci_5m'
+dframe = pd.read_excel(path + '580_CIDANAU_190219N.xlsx')
+# colmn = ['Band_2','Band_3','Band_4','Band_5','Band_6','Band_7']
+colmn = ['New2_B3', 'New2_B4', 'New2_B6', 'New2_B7']
+trget = 'frci'
+# trget = 'frci_5m'
+
 dfx = pd.DataFrame(dframe, columns=colmn)
 dfy = np.asarray(dframe[trget])
 
@@ -20,6 +24,8 @@ X_test = sc.transform(X_test)
 clfSVR = SVR(kernel='rbf')
 clfSVR.fit(X_train, y_train)
 score = clfSVR.score(X_test, y_test)
+y_pred = clfSVR.predict(X_test)
 
-# print(dframe.head())
+print(dframe.head())
+print(F2020ML.F2020_RMSE(y_test, y_pred))
 print(score, clfSVR)
