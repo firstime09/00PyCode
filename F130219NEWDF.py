@@ -7,10 +7,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 #--- Load dataframe
-path = 'D:/00RCode/Result/'
-dframe = pd.read_excel(path + '580_CIDANAU_190219N.xlsx')
+path = 'D:/GitHub/GitTesis/SVR/R export/'
+dframe = pd.read_csv(path + '200219_DbscanSamp_1.5_5.csv')
 # colmn = ['Band_2','Band_3','Band_4','Band_5','Band_6','Band_7']
-colmn = ['New2_B3', 'New2_B4', 'New2_B6', 'New2_B7']
+colmn = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7', 'DEM', 'ASPECT_R', 'SLOPE_R']
 trget = 'frci'
 # trget = 'frci_5m'
 
@@ -28,4 +28,5 @@ y_pred = clfSVR.predict(X_test)
 
 print(dframe.head())
 print(F2020ML.F2020_RMSE(y_test, y_pred))
+print(F2020ML.F2020_RSQRT(y_test, y_pred))
 print(score, clfSVR)
