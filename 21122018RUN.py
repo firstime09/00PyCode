@@ -6,10 +6,11 @@ from Modul_Topo.FORESTS2020 import allFunc
 from Modul_ML.F17122018ML import F2020ML
 
 # path = 'C:/Users/user/Dropbox/FORESTS2020/00AllData/Dataframe Sumatra/'
-path = 'D:/GitHub/GitTesis/SVR/R export/'
-dfxlx = pd.read_csv(path + '200219_DbscanSamp_1.5_5.csv')
-column = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7', 'DEM', 'ASPECT_R', 'SLOPE_R']
-# column = ['PC1', 'PC2', 'PC3', 'PC4', 'PC5', 'PC6']
+path = 'D:/00RCode/Result/'
+dfxlx = pd.read_excel(path + 'CIDANAU580_MinMax_KMEANS.xlsx')
+# column = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7', 'DEM', 'ASPECT_R', 'SLOPE_R']
+column = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
+# column = ['PC1', 'PC2']
 target = 'frci'
 # target = 'dfy'
 dfX = pd.DataFrame(dfxlx, columns=column)
