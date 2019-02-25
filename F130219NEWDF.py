@@ -7,10 +7,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 #--- Load dataframe
-path = 'D:/GitHub/GitTesis/SVR/R export/'
-dframe = pd.read_csv(path + '200219_DbscanSamp_1.5_5.csv')
-# colmn = ['Band_2','Band_3','Band_4','Band_5','Band_6','Band_7']
-colmn = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7', 'DEM', 'ASPECT_R', 'SLOPE_R']
+path = 'D:/00RCode/Result/Data Sumatera/'
+dframe = pd.read_csv(path + 'FRCI_Line_6_Sumatera_TRY01.csv')
+colmn = ['Band_3','Band_4','Band_5','Band_6','Band_7']
+# colmn = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7', 'DEM', 'ASPECT_R', 'SLOPE_R']
 trget = 'frci'
 # trget = 'frci_5m'
 

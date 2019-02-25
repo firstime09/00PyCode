@@ -6,8 +6,8 @@ from Modul_Topo.FORESTS2020 import allFunc
 from Modul_ML.F17122018ML import F2020ML
 
 # path = 'C:/Users/user/Dropbox/FORESTS2020/00AllData/Dataframe Sumatra/'
-path = 'D:/00RCode/Result/'
-dfxlx = pd.read_excel(path + 'CIDANAU580_MinMax_KMEANS.xlsx')
+path = 'D:/00RCode/Result/Data Sumatera/'
+dfxlx = pd.read_excel(path + 'FRCI_Line_7_Sumatera_78.13N.xlsx')
 # column = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7', 'DEM', 'ASPECT_R', 'SLOPE_R']
 column = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 # column = ['PC1', 'PC2']
