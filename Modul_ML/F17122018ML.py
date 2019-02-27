@@ -1,4 +1,4 @@
-import math, numpy
+import math, numpy, pandas
 from osgeo import gdal
 from matplotlib import pyplot as plt
 from sklearn.preprocessing import StandardScaler
@@ -7,6 +7,14 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 
 class F2020ML:
+    def F2020_DF(dframe):
+        Load_class = 'Class'
+        dclass = numpy.asarray(dframe[Load_class])
+        df1 = pandas.Series(dclass).value_counts().reset_index().sort_values('index').reset_index(drop=True)
+        df1.columns = ['Class', 'Frequency']
+        a = df1.min()
+        return a
+
     def plot_data(DataX, DataY): #--- Data Visualization 2D 16/01-2019
         plt.plot(DataX, DataY)
         plt.title('Data Visualization')
