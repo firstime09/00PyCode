@@ -49,7 +49,7 @@ print('y array: {sz}'.format(sz = y.shape))
 #----- Third Step
 # Make the Randomforest Classification model
 rf = RandomForestClassifier(n_estimators=500, oob_score=True)
-rf = rf.fit(X,y)
+rf = rf.fit(X, y)
 print('Score acc: {oob}%'.format(oob = rf.oob_score_ * 100))
 
 band = [1, 2, 3, 4, 5, 7, 6]
@@ -63,3 +63,14 @@ df['truth'] = y
 df['predict'] = rf.predict(X)
 # Cross-tabulates prediction
 print(pd.crosstab(df['truth'], df['predict'], margins=True))
+
+#----- Fifth Step
+# Predicting the rest of the image
+new_shape = (img.shape[0] * img.shape[1], img.shape[2] - 1)
+new_as_array = img[:, :, :7].reshape(new_shape)
+print('Reshaped from {o} to {n}'.format(o=img.shape, n=new_as_array.shape))
+# class_prediction = rf.predict(new_as_array)
+# class_prediction = class_prediction.reshape(img[:, :, 0].shape)
+
+# Visualize
+# First setup a 5-4-3 composite

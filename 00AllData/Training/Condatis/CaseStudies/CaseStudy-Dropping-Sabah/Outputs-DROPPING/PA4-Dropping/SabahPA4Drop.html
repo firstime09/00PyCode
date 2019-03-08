@@ -1,0 +1,287 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="https://webapp.condatis.org.uk/css/condatis.css?q=5"/>
+		<link rel="shortcut icon" href="https://webapp.condatis.org.uk/favicon.ico" type="image/x-icon">
+		<title>Condatis Report</title> 
+	</head>
+	<body>
+		<div id = "wrapper">
+			<div id = 'topbanner' style = 'margin:0;'>
+				<table class = 'navtab' style='float:right;font-size:smaller; font-variant:small-caps; color:#d4026d; width:30%; text-align:center; '>
+					<tr style = 'border:0px'>
+						<td style = 'width:25%; border:0'> <a href = 'http://wordpress.condatis.org.uk/' target='_blank'>condatis project</a></td>
+						<td style = 'width:15%; border:0'> <a href = 'https://webapp.condatis.org.uk/help/help.html' target='_blank'>help</a></td>
+						
+				</tr>
+			</table>
+			</div>
+			<div id = 'topbannerspace'>
+			</div>
+			<div id = 'banner'>
+				<br>
+				<span style = 'font-size:larger; margin-left:5%;'>bigger, better and more joined-up habitat networks</span>
+			</div>
+			<div id = "content">	
+				<!--
+				<style>
+					#wrapper
+					{
+						width:90%;
+						margin-left:5%;
+						margin-right:5%;
+						margin-top:0px;
+						min-height:800px;
+						padding:0px;
+						background-color:#fdfdfd;
+						border-radius: 25px;
+						/* border-radius: 0px 0px 25px 25px; */
+					}
+					
+					#content
+					{
+						margin:16px 5% 16px;
+						padding:16px;
+						text-align:left;
+					}
+					table, th, td, tr {
+						text-align:center;
+						padding:4px;
+						/* border: 1px solid black; */
+						border-collapse: collapse;
+						margin:16px
+					}
+					img {
+						border: 1px solid black;
+						margin: 16px;
+						}
+						
+				</style>
+				-->
+				<style>
+					img 
+					{
+						border: 1px solid black;
+						margin: 16px;
+					}
+				</style>
+				
+				
+				<h3>Condatis analysis results report.<br>Job: SabahPA4Drop<br>
+					Analysis Type: Dropping</h3>
+				<div id = 'tablecontainer'>
+				<table style = "width:100%">
+					<tr><td>Name</td><td>Lydia Cole</td></tr>
+					<tr><td>Email</td><td>lydia.cole@liverpool.ac.uk</td></tr>
+					<tr><td>Date presented</td><td>09/21/2018 16:10:19</td></tr>
+					<tr><td>Time taken for analysis</td><td>0:02:35</td></tr>
+				</table>
+				</div>
+				<br>
+				<br>
+				<b>Input Data and parameters</b>
+				<div id = 'tablecontainer'>
+				<table style = "width:100%">
+					<tr><td>Habitat layer</td><td>Forestundrop.tif</td></tr>
+					<tr><td>Source and Target layer</td><td>SourceTarget4.tif</td></tr>
+					<tr><td>Prioritisation Layer</td><td>Forestdrop.tif</td></tr>
+					<tr><td>Reproductive Rate (individuals per km<sup>2</sup>)</td><td>2000.0</td></tr>
+					<tr><td>Dispersal Distance (km)</td><td>4.0</td></tr>
+				</table>
+				</div>
+				<br>
+				<br>
+				<b>Processes</b>
+				<div id = 'tablecontainer'>
+				<table style = "width:100%">
+					<tr><td>Condatis Version</td><td>1.00</td></tr> 
+					<tr><td>Dropping Steps</td><td>10</td></tr>
+					<tr><td>Step type</td><td>Number based</td></tr>
+				</table>
+				</div>
+				
+				<h3>Results</h3>
+				<b>Output files:</b><br>
+				All files included in zip file
+				<a href="SabahPA4Drop_results.zip">
+				SabahPA4Drop_results.zip
+				(Click to download)</a>
+				
+				<br>
+				<br>
+				<b>KEY RESULTS</b><br>
+				SabahPA4Drop.csv<br>
+				SabahPA4Drop_dropping_rank.tif<br>
+				SabahPA4Drop_summary.csv<br>
+				
+				<br>
+				<b>BACKGROUND RESULTS</b><br>
+				SabahPA4Drop_speed_loss.tif<br>
+				SabahPA4Drop_start_flow.tif<br>
+				SabahPA4Drop_end_flow.tif<br>
+				SabahPA4Drop_end_progress.tif
+	
+				<br>
+				<b></b>
+				<br>
+				<br>
+				<p font-size=small>
+					The <i>Help Documentation</i> on the Condatis website provides further information to assist
+					with the interpretation of Condatis outputs and with troubleshooting, 
+					and can be accessed <a href = "http://wordpress.condatis.org.uk/about-the-software/downloads" target="_blank">here.</a><br><br>
+					Maps shown in .tif files can be viewed using a mapping platform, 
+					for example <a href="https://www.qgis.org/en/site/" target="_blank">QGIS</a>(free and open source) 
+					or <a href="https://www.arcgis.com/features/index.html" target="_blank">ArcGIS</a>.
+				</p>
+				
+				<b>KEY RESULTS</b><br><br>
+				<b>Summary of results.</b>
+
+				<br>
+				For this landscape of interest, the speed of movement of the modelled species changes from 2527.8304 before
+				any habitat is dropped to 0.0000 once
+				all 15569 additional habitat cells are lost.
+				This represents a reduction in speed of 100.0000% with a loss of
+				habitat of 15569 km<sup>2</sup>
+				(93.32% of the total habitat area).
+				
+				<br>
+				<br>
+				<b>Trajectory of dropping</b><br>
+				<img src = 'SabahPA4Drop_dropping_trajectory.png' alt='Speed vs Dropping Stage' ><br>
+				Fig. 1:	The speed, (inversely related to the time taken to cross from source to target), is plotted against the stage of dropping. 
+				Here the dropping mode is <b>Number based</b>. (The dropping of habitat cells from the Prioritisation layer is performed 
+				such that  an equal amount of cells are dropped per stage). Speed is expected to get slower when habitat is lost from the landscape, but notice how severely speed is lost at different stages. 
+				<br>
+				<br>
+				<b>Dropping Rank Map</b>
+				<br>
+				<img src = 'SabahPA4Drop_dropping_rank.png' alt='Dropping Rank Map' ><br>
+				<br>
+				Fig. 2: An illustration of the rank of each habitat cell in the dropping analysis,
+				with each drop stage represented by a different colour on the ramp. 
+				The source and target are labelled using <span style = "color:magenta"> MAGENTA &block;</span> and <span style = "color:cyan"> CYAN &block;</span> respectively. 
+				Non-droppable habitat cells are coloured <span style= "color:limegreen"> &block; GREEN. </span>
+				Lower-ranking cells were dropped earliest because they carried relatively little flow. Higher ranking cells were retained longer, and this implies that they are of higher priority. See table 1 for more information on the cells included in each rank.
+				
+				<br>
+				<br>
+				<b>Step Dropping Summary</b>
+				<br><br>
+				<div id = 'tablecontainer'>
+				<table style='width:100%;'><tr><th>Stage</th><th>Dropped</th><th>Speed</th><th>Speed Reduction</th><th>Reduction per Cell</th></tr><tr><td>Initial</td><td>0</td><td>2527.830416</td><td>0.000000</td><td>0.000000
+</td><tr><td>1</td><td>1557</td><td>2526.752973</td><td>1.077444</td><td>0.000692
+</td><tr><td>2</td><td>1557</td><td>2521.213080</td><td>5.539893</td><td>0.003558
+</td><tr><td>3</td><td>1557</td><td>2514.095447</td><td>7.117633</td><td>0.004571
+</td><tr><td>4</td><td>1557</td><td>2490.518128</td><td>23.577319</td><td>0.015143
+</td><tr><td>5</td><td>1557</td><td>2434.739909</td><td>55.778219</td><td>0.035824
+</td><tr><td>6</td><td>1557</td><td>2344.824474</td><td>89.915436</td><td>0.057749
+</td><tr><td>7</td><td>1557</td><td>2175.999269</td><td>168.825205</td><td>0.108430
+</td><tr><td>8</td><td>1557</td><td>1913.160283</td><td>262.838986</td><td>0.168811
+</td><tr><td>9</td><td>1557</td><td>1088.044943</td><td>825.115340</td><td>0.529939
+</td><tr><td>Final</td><td>1556</td><td>1.163104e-05</td><td>1.088045e+03</td><td>
+</td></table>				Table 1:	Summary of results from Condatis dropping analysis, showing the effect of dropping cells at each stage.
+				</div>
+				<br>
+				<br>
+				<b>BACKGROUND RESULTS</b><br>
+				Additional figures that enable further interrogation of wildlife movement in the landscape.
+				<br>
+				<br>
+				<b>Loss of Speed</b><br>
+				
+				<img src = 'SabahPA4Drop_speed_loss.png' alt='Speed vs Dropping Stage' ><br>
+				
+				Fig. 3:	The reduction in the speed of movement of the species from source to target 
+				with each stage of dropping is illustrated by the colour ramp, (note log scale).<br>
+				The source and target are labelled using <span style = "color:magenta"> MAGENTA &block;</span> and <span style = "color:cyan"> CYAN &block;</span> respectively. 
+				Non-droppable habitat cells are coloured <span style= "color:green"> GREEN &block;</span>.
+				This is a spatial representation of the values in column 5 of Table 1, 
+				Reduction per cell. Higher values mean that the loss of these cells was highly detrimental to the total speed achievable in the landscape, 
+				and it implies these cells are of higher priority for connectivity. 
+				<br>
+				<br>
+				<b>Start Flow Map</b>
+				<br>
+				<img src = 'SabahPA4Drop_start_flow.png' alt='Start Flow Map'><br>
+				<br>
+				Fig. 4: The pattern of flow of individuals from source to target across the landscape
+				before dropping is performed, i.e. with all habitat cells within the Prioritisation Layer 
+				contributing to connectivity. Flow through each cell is represented by the colour ramp, (note log scale). 
+				The source and target are labelled using <span style = "color:magenta">MAGENTA &block;</span> and <span style = "color:cyan">CYAN &block;</span> respectively. 
+				Areas without habitat are grey, i.e. contain no data. 
+				<br>	
+				<br>	
+				<b>End Flow Map</b>
+				<br>
+				<img src = 'SabahPA4Drop_end_flow.png' alt='End Flow Map' ><br>
+				<br>
+				Fig. 5:	The pattern of flow of individuals from source to target across the landscape 
+				after dropping has been performed, i.e. with no habitat cells within the Prioritisation
+				layer contributing to connectivity. Flow through each cell is represented by the colour ramp, (note log scale).
+				The source and target are labelled using <span style = "color:magenta">MAGENTA &block;</span> and <span style = "color:cyan">CYAN &block; </span>respectively. 
+				
+				Cells that have been dropped are grey, as are areas that never contained habitat.
+				
+				
+
+				<br>
+				
+				
+				
+				<br>
+				<br>
+				<b>Progress of movement</b>
+				<br>
+				<img src = 'SabahPA4Drop_end_progress.png' alt='Speed vs Dropping Stage' ><br>
+				Fig. 6:	The progress of movement from source to target is illustrated by the colour ramp.
+				Bands of similar colour lie at a similar effective distance between the source and the target,
+				e.g. a value of 50%, as demonstrated in the legend, represents the cells the species is expected to reach 
+				within half of the total 'travel' time. The source and target are labelled 
+				using <span style = "color:magenta">MAGENTA &block;</span> and <span style = "color:cyan">CYAN &block; </span>respectively.  
+				<br>
+				<br>
+				
+
+				<hr>
+				<br>
+				<p style="font-size:small; text-align:left;">
+					<b>Copyright</b><br>
+					The text of this report is copyright Condatis team 2018. The report is intended for the use of the registered user and his or her immediate colleagues.
+					If you wish to disseminate the report or any extract of the text more widely, please seek written permission by emailing contact@condatis.org.uk
+					<br>
+					<b>Responsibility for data</b><br>
+					The figures in this report are derived from original data uploaded by the user. 
+					Reproducing, publishing or transmitting these figures to third parties may violate copyright or database rights associated with the original data. 
+					By uploading data to this site you asserted that you have the required rights and permissions to upload the data and indemnified this site from any claims by third parties with respect to the uploaded data.
+					You also indemnify this site from any claims by third parties with respect to your usage of this report, in whole or in part.
+					
+					<br>
+					<b>How to cite Condatis</b><br>
+					For preferred citation formats, please refer to our <a href = "http://wordpress.condatis.org.uk/about-the-software" target="_blank">website</a><br>
+					Most recent publication of the underlying scientific method: Hodgson, J. A., Wallis, 
+					D. W., Krishna, R., & Cornell, S. J. (2016). <i>How to manipulate landscapes to improve the potential for range expansion. </i>
+					Methods in Ecology and Evolution, 7(12), 1558-1566. Doi:10.1111/2041-210X.12614. 					
+					<br><br>
+					It is very useful for us to know how Condatis is being used and to be able to report on its influence for future grant applications; 
+					therefore please send a copy of any publications to contact@condatis.org or make us aware of the application of your Condatis outputs.
+					
+					<!-- Condatis code on GitHub DOI: XXXXXXX  and/or www.condatis.org.uk<br> -->
+				</p>
+
+			</div>
+		<div id = 'footer'>
+		<table class = 'navtab' style='margin-top:64px; width:100%; height:64px; text-align:right; border:0px'> 
+		<tr style = 'border:0px;'><td style = 'border:0px;'><a href= 'http://pgb.liv.ac.uk/~johnheap/pinkcondatis/public_html/index.php?page=toc'  target='_blank'>Terms and Conditions</a></td></tr>
+		<tr style = 'border:0px;'><td style = 'border:0px;'><a href = 'http://pgb.liv.ac.uk/~johnheap/pinkcondatis/public_html/index.php?page=privacy'>Privacy Declaration</a></td></tr>
+		<tr style = 'border:0px;'><td style = 'border:0px;'>&copy; Condatis 2018</td></tr>
+		</table>		
+		</div>
+		</div>		
+		
+		
+		
+	</body>
+</html>
+	
+			
+		
