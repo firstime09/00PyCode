@@ -6,6 +6,17 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+def color_stretch(image, index, minmax=(0, 10000)):
+    colors = image[:, :, index].astype(np.float)
+    max_val = minmax[1]
+    min_val = minmax[0]
+    # Enforce Maximum and Minimun Value
+    colors[colors[:, :, :] > max_val] = max_val
+    colors[colors[:, :, :] < min_val] = min_val
+    for b in range(colors.shape[2]):
+        colors[:, :, b] = colors[:, :, b] * 1 / (max_val - min_val)
+    return colors
+
 gdal.UseExceptions()
 gdal.AllRegister()
 #----- First Step
@@ -71,6 +82,8 @@ new_as_array = img[:, :, :7].reshape(new_shape)
 print('Reshaped from {o} to {n}'.format(o=img.shape, n=new_as_array.shape))
 # class_prediction = rf.predict(new_as_array)
 # class_prediction = class_prediction.reshape(img[:, :, 0].shape)
-
-# Visualize
-# First setup a 5-4-3 composite
+#
+# # Visualize
+# # First setup a 5-4-3 composite
+# img543 = color_stretch(img, [4, 3, 2], (0, 8000))
+# n = class_prediction.max()
