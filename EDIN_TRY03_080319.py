@@ -60,9 +60,11 @@ new_shape = (img.shape[0] * img.shape[1], img.shape[2])
 new_as_array = img[:, :, :6].reshape(new_shape)
 
 clfSVR1_pred = clfSVR1.predict(new_as_array)
+class_prediction = clfSVR1_pred.reshape(img[:, :, 0].shape)
 # a = F2020ML.F2020_RMSE(img.shape, clfSVR1_pred)
+
 print('Reshaped from {o} to {n}'.format(o=img.shape, n=new_as_array.shape))
 print(best_parm, '.......', 'Values R2:', best_score)
-# print('Values RMSE:', a)
+print('Class Prediction:', class_prediction)
 
 plt.show()

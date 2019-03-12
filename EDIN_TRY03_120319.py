@@ -20,6 +20,6 @@ img = np.zeros((img_ds.RasterYSize, img_ds.RasterXSize, img_ds.RasterCount),
 new_shape = (img.shape[0] * img.shape[1], img.shape[2])
 new_as_array = img[:, :, :6].reshape(new_shape)
 
-print(img)
+print(img.shape)
 print(new_shape)
 print(new_as_array)

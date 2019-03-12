@@ -77,13 +77,40 @@ print(pd.crosstab(df['truth'], df['predict'], margins=True))
 
 #----- Fifth Step
 # Predicting the rest of the image
-new_shape = (img.shape[0] * img.shape[1], img.shape[2] - 1)
+new_shape = (img.shape[0] * img.shape[1], img.shape[2])
 new_as_array = img[:, :, :7].reshape(new_shape)
 print('Reshaped from {o} to {n}'.format(o=img.shape, n=new_as_array.shape))
-# class_prediction = rf.predict(new_as_array)
-# class_prediction = class_prediction.reshape(img[:, :, 0].shape)
+class_prediction = rf.predict(new_as_array)
+class_prediction = class_prediction.reshape(img[:, :, 0].shape)
 
-# # Visualize
-# # First setup a 5-4-3 composite
-# img543 = color_stretch(img, [4, 3, 2], (0, 8000))
-# n = class_prediction.max()
+# Visualize
+# First setup a 5-4-3 composite
+img543 = color_stretch(img, [4, 3, 2], (0, 8000))
+n = class_prediction.max()
+
+colors = dict((
+    (0, (0, 0, 0, 255)),  # Nodata
+    (1, (0, 150, 0, 255)),  # Forest
+    (2, (0, 0, 255, 255)),  # Water
+    (3, (0, 255, 0, 255)),  # Herbaceous
+    (4, (160, 82, 45, 255)),  # Barren
+    (5, (255, 0, 0, 255))  # Urban
+))
+# Put 0 - 255 as float 0 - 1
+for k in colors:
+    v = colors[k]
+    _v = [_v / 255.0 for _v in v]
+    colors[k] = _v
+
+index_colors = [colors[key] if key in colors else
+                (255, 255, 255, 0) for key in range(1, n + 1)]
+cmap = plt.matplotlib.colors.ListedColormap(index_colors, 'Classification', n)
+
+# Now show the classmap next to the image
+plt.subplot(121)
+plt.imshow(img543)
+
+plt.subplot(122)
+plt.imshow(class_prediction, cmap=cmap, interpolation='none')
+
+plt.show()

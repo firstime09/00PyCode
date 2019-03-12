@@ -34,12 +34,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3458" />
+          <entry key="py" value="3499" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="3458" />
+          <entry key="Python" value="3499" />
         </counts>
       </usages-collector>
     </session>
@@ -49,10 +49,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EDIN_TRY01_080319.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="81" column="75" lean-forward="true" selection-start-line="81" selection-end-line="81" selection-end-column="75" />
+            <state relative-caret-position="511">
+              <caret line="77" column="17" lean-forward="true" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
               <folding>
-                <marker date="1552042406380" expanded="true" signature="325:683" ph="..." />
+                <element signature="e#67#114#0" expanded="true" />
+                <marker date="1552387635572" expanded="true" signature="325:683" ph="..." />
               </folding>
             </state>
           </provider>
@@ -61,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EDIN_TRY03_080319.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="59" column="47" lean-forward="true" selection-start-line="58" selection-end-line="59" selection-end-column="47" />
+            <state relative-caret-position="112">
+              <caret line="63" column="49" lean-forward="true" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -73,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EDIN_TRY03_120319.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="154">
+              <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -101,9 +102,9 @@
         <option value="$PROJECT_DIR$/F04032019ML.py" />
         <option value="$PROJECT_DIR$/050319Raster.py" />
         <option value="$PROJECT_DIR$/F130219NEWDF.py" />
-        <option value="$PROJECT_DIR$/EDIN_TRY01_080319.py" />
         <option value="$PROJECT_DIR$/EDIN_TRY02_080319.py" />
         <option value="$PROJECT_DIR$/EDIN_TRY03_080319.py" />
+        <option value="$PROJECT_DIR$/EDIN_TRY01_080319.py" />
         <option value="$PROJECT_DIR$/EDIN_TRY03_120319.py" />
       </list>
     </option>
@@ -264,10 +265,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.EDIN_TRY03_120319" />
+        <item itemvalue="Python.EDIN_TRY01_080319" />
         <item itemvalue="Python.EDIN_TRY03_080319" />
         <item itemvalue="Python.F04032019ML" />
         <item itemvalue="Python.EDIN_TRY02_080319" />
-        <item itemvalue="Python.EDIN_TRY01_080319" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +294,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.74629194" visible="true" weight="0.22735043" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.74629194" visible="true" weight="0.2957265" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35213676" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -435,18 +436,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EDIN_TRY01_080319.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="81" column="75" lean-forward="true" selection-start-line="81" selection-end-line="81" selection-end-column="75" />
+        <state relative-caret-position="511">
+          <caret line="77" column="17" lean-forward="true" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
           <folding>
-            <marker date="1552042406380" expanded="true" signature="325:683" ph="..." />
+            <element signature="e#67#114#0" expanded="true" />
+            <marker date="1552387635572" expanded="true" signature="325:683" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EDIN_TRY03_080319.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="59" column="47" lean-forward="true" selection-start-line="58" selection-end-line="59" selection-end-column="47" />
+        <state relative-caret-position="112">
+          <caret line="63" column="49" lean-forward="true" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
@@ -455,8 +457,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EDIN_TRY03_120319.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="154">
+          <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
