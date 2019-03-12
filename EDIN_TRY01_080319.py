@@ -82,7 +82,7 @@ new_as_array = img[:, :, :7].reshape(new_shape)
 print('Reshaped from {o} to {n}'.format(o=img.shape, n=new_as_array.shape))
 # class_prediction = rf.predict(new_as_array)
 # class_prediction = class_prediction.reshape(img[:, :, 0].shape)
-#
+
 # # Visualize
 # # First setup a 5-4-3 composite
 # img543 = color_stretch(img, [4, 3, 2], (0, 8000))
