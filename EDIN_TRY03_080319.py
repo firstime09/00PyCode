@@ -25,8 +25,8 @@ for b in range(img.shape[2]):
 plt.imshow(img[:, :, 4], cmap = plt.cm.Greys_r)
 plt.title('DATA LandSat')
 
-path2 = 'C:/Users/user/Dropbox/FORESTS2020/00AllData/Dataframe Cidanau/'
-loadFile = pd.read_excel(path2 + 'Cidanau_350_00.xlsx')
+path2 = 'C:/Users/Felix/Dropbox/FORESTS2020/Result/'
+loadFile = pd.read_csv(path2 + 'Cidanau_57_18.csv')
 select_col = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 select_row = 'frci'
 
@@ -39,7 +39,7 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 best_score = 0
-for gamma in [0.01, 0.1, 1]:
+for gamma in [0.01, 0.1, 0.2, 1]:
     for C in [1, 2, 5, 8, 10]:
         for epsilon in [0.001, 0.01, 0.1, 1]:
             clfSVR = SVR(kernel='rbf', C=C, epsilon=epsilon, gamma=gamma)
@@ -55,16 +55,27 @@ for gamma in [0.01, 0.1, 1]:
 clfSVR1 = SVR(kernel='rbf', C=best_C, epsilon=best_epsilon, gamma=best_gamma)
 clfSVR1.fit(X_train, y_train)
 clfSVR.score(X_test, y_test)
+y_pred = clfSVR1.predict(X_test)
+a = F2020ML.F2020_RMSE(y_test, y_pred)
 
 new_shape = (img.shape[0] * img.shape[1], img.shape[2])
-new_as_array = img[:, :, :6].reshape(new_shape)
 
-clfSVR1_pred = clfSVR1.predict(new_as_array)
-class_prediction = clfSVR1_pred.reshape(img[:, :, 0].shape)
-# a = F2020ML.F2020_RMSE(img.shape, clfSVR1_pred)
+img_as_array = img[:, :, :6].reshape(new_shape)
+print('Reshaped from {o} to {n}'.format(o=img.shape, n=img_as_array.shape))
 
-print('Reshaped from {o} to {n}'.format(o=img.shape, n=new_as_array.shape))
-print(best_parm, '.......', 'Values R2:', best_score)
-print('Class Prediction:', class_prediction)
+# Now predict for each pixel
+class_prediction = clfSVR1.predict(img_as_array)
+class_prediction = class_prediction.reshape(img[:, :, 0].shape)
+#
+# # y_pred = clfSVR1.predict(img_as_array)
+# a1 = F2020ML.F2020_RMSE(y_test, class_prediction)
+print(best_parm)
+print('Max Pred:',class_prediction.max(),'.....','Min Pred:',class_prediction.min())
+print('Min img[1]:',img[1].min(),'.....','Max img[1]:',img[1].max(),'.....','Mean img[1]:',img[1].mean())
+print('Min img[2]:',img[2].min(),'.....','Max img[2]:',img[2].max(),'.....','Mean img[2]:',img[2].mean())
+# print(class_prediction)
+print('Values RMSE:', a, '.......', 'Values R2:', best_score)
+# print(new_shape, img_as_array)
 
+plt.imshow(class_prediction, interpolation='none')
 plt.show()
