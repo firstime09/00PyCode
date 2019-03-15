@@ -1,29 +1,36 @@
-import glob
 import numpy as np
+import glob, PIL
 import matplotlib.pyplot as plt
-from osgeo import gdal, gdal_array
-from skimage.external import tifffile
 
-gdal.UseExceptions()
-gdal.AllRegister()
+def concat_images(imga, imgb):
+    """
+    Combines two color image ndarrays side-by-side.
+    """
+    ha,wa = imga.shape[:2]
+    hb,wb = imgb.shape[:2]
+    max_height = np.max([ha, hb])
+    total_width = wa+wb
+    new_img = np.zeros(shape=(max_height, total_width, 3))
+    new_img[:ha,:wa]=imga
+    new_img[:hb,wa:wa+wb]=imgb
+    return new_img
 
-path_save = 'D:/00AllData/123064/'
-with tifffile.TiffWriter(path_save + 'Stack_Data.tif') as stack:
-    for filename in glob.glob('D:/00AllData/123064/*.TIF'):
-        stack.save(tifffile.imread(filename), photometric='minisblack')
+def concat_n_images(image_path_list):
+    """
+    Combines N color images from a list of image paths.
+    """
+    output = None
+    for i, img_path in enumerate(image_path_list):
+        img = plt.imread(img_path)[:,:,:3]
+        if i==0:
+            output = img
+        else:
+            output = concat_images(output, img)
+    return output
 
-load_stack_data = gdal.Open(path_save + 'Stack_Data.tif', gdal.GA_ReadOnly)
+for i in glob.glob('D:/GitHub/GitTesis/RAW DATA/*.img'):
+    fopen = PIL.open(i)
+    output = concat_n_images(fopen)
 
-img = np.zeros((load_stack_data.RasterYSize, load_stack_data.RasterXSize, load_stack_data.RasterCount),
-               gdal_array.GDALTypeCodeToNumericTypeCode(load_stack_data.GetRasterBand(1).DataType))
-# print(img)
-for b in range(img.shape[2]):
-    img[:, :, b] = load_stack_data.GetRasterBand(b + 1).ReadAsArray()
-# roi = roi_ds.GetRasterBand(1).ReadAsArray().astype(np.uint8)
-
-# plt.subplot(121)
-plt.imshow(img[:, :, 4], cmap = plt.cm.Greys_r)
-plt.title('DATA LandSat')
-
-# plt.imshow(load_stack_data, interpolation='none')
-plt.show()
+    plt.imshow(output)
+    plt.show()
