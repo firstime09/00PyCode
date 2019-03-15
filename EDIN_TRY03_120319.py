@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 
 gdal.UseExceptions()
 gdal.AllRegister()
-path1 = 'D:/00PyCode/00AllData/Test_Data_08032019/'
-img_ds = gdal.Open(path1 + 'layerstack.TIF', gdal.GA_ReadOnly)
+path1 = 'D:/GitHub/GitTesis/TIF RAW/'
+img_ds = gdal.Open(path1 + 'Cidanau_Stack_150319.tif', gdal.GA_ReadOnly)
 # roi_ds = gdal.Open('D:/00PyCode/00AllData/Test_Data_08032019/training/training.TIF', gdal.GA_ReadOnly)
 
 img = np.zeros((img_ds.RasterYSize, img_ds.RasterXSize, img_ds.RasterCount),

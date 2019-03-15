@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 
 gdal.UseExceptions()
 gdal.AllRegister()
-path1 = 'D:/00PyCode/00AllData/Test_Data_08032019/'
-img_ds = gdal.Open(path1 + 'layerstack.TIF', gdal.GA_ReadOnly)
+path1 = 'D:/GitHub/GitTesis/TIF RAW/'
+img_ds = gdal.Open(path1 + 'Cidanau_Stack_150319.tiff', gdal.GA_ReadOnly)
 # roi_ds = gdal.Open('D:/00PyCode/00AllData/Test_Data_08032019/training/training.TIF', gdal.GA_ReadOnly)
 
 img = np.zeros((img_ds.RasterYSize, img_ds.RasterXSize, img_ds.RasterCount),
@@ -25,7 +25,7 @@ for b in range(img.shape[2]):
 plt.imshow(img[:, :, 4], cmap = plt.cm.Greys_r)
 plt.title('DATA LandSat')
 
-path2 = 'C:/Users/Felix/Dropbox/FORESTS2020/Result/'
+path2 = 'C:/Users/user/Dropbox/FORESTS2020/Result/'
 loadFile = pd.read_csv(path2 + 'Cidanau_57_18.csv')
 select_col = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 select_row = 'frci'
