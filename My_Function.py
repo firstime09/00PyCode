@@ -29,8 +29,16 @@ class allFunction:
         return rScores
 
     def rMSE(ActualY, PredictY): #--- Root mean squared error in statistical model (04/12-2018)
-        rootMSE = (math.sqrt(sum((ActualY-PredictY)**2) / ActualY.shape[0]))
+        rootMSE = (math.sqrt(sum((ActualY - PredictY)**2) / ActualY.shape[0]))
         return rootMSE
+
+    def Min_Max_Normalize(data): #--- Min Max Normalization model (18/03-2-19)
+        Norm = (data - np.min(data)) / (np.max(data) - np.min(data))
+        return Norm
+
+    def ZScore_Normalize(data): #--- ZScore Normalization model (18/03-2-19)
+        Norm = (data - np.mean(data)) / (np.std(data))
+        return Norm
 
     def F2020_SVR(dataX, dataY, tsize, rstate): #--- Model SVR kernel=rbf FORESTS2020
         X_train, X_test, y_train, y_test = train_test_split(dataX, dataY, test_size=tsize, random_state=rstate)

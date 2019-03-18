@@ -5,8 +5,8 @@ from Modul_ML.F17122018ML import F2020ML
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
-path = 'D:/00RCode/Result/Data Sumatera/'
-loadFile = pd.read_excel(path + 'FRCI_Line_6_Sumatera_62.18.xlsx')
+path = 'C:/Users/Felix/Dropbox/FORESTS2020/Result/'
+loadFile = pd.read_csv(path + '0.695109 0.160441 30 _sample.csv')
 select_col = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 select_row = 'frci'
 
@@ -18,10 +18,13 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
+gamma_V = np.arange(0, 1)
+C_V = np.arange(1, 10)
+epsilon_V = np.arange(0, 1)
 best_score = 0
-for gamma in [0.01, 0.1, 1]:
-    for C in [1, 2, 5, 8, 10]:
-        for epsilon in [0.001, 0.01, 0.1, 1]:
+for gamma in list(gamma_V):
+    for C in list(C_V):
+        for epsilon in list(epsilon_V):
             clfSVR = SVR(kernel='rbf', C=C, epsilon=epsilon, gamma=gamma)
             clfSVR.fit(X_train, y_train)
             score = clfSVR.score(X_test, y_test)
