@@ -9,10 +9,11 @@ from sklearn.model_selection import train_test_split
 class F2020ML:
     def plot_data(DataX, DataY): #--- Data Visualization 2D 16/01-2019
         plt.plot(DataX, DataY)
+        plt.scatter(DataX, DataY, label="Data", marker="*", s=30)
         plt.title('Data Visualization')
         plt.xlabel('Data X')
         plt.ylabel('Data Y')
-        plt.legend(['D1','D2','D3','D4', 'D5', 'D6'])
+        plt.legend()
         plt.show()
 
     def export_array(in_path, in_array, output_path): #--- For map of array from Mr. Sahid (13/12-2018)

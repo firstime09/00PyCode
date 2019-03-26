@@ -12,100 +12,57 @@
     <session id="-2008359610">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="68" />
+          <entry key="py" value="73" />
           <entry key="tiff" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="1" />
-          <entry key="Python" value="68" />
+          <entry key="Python" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="190" />
-          <entry key="py" value="5685" />
+          <entry key="py" value="8206" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5875" />
+          <entry key="Python" value="8396" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/My_Function.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="34" column="78" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modul_ML/F17122018ML.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modul_Topo/FORESTS2020.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-                <element signature="e#138#159#0" />
-                <element signature="e#437#623#0" />
-                <element signature="e#656#840#0" />
-                <element signature="e#875#1119#0" />
-                <element signature="e#1146#2795#0" />
-                <element signature="e#2826#2858#0" />
-                <element signature="e#2888#2952#0" />
-                <element signature="e#2980#3271#0" />
-                <element signature="e#3297#3343#0" />
-                <element signature="e#3369#3415#0" />
-                <element signature="e#3442#3560#0" />
-                <element signature="e#3616#3737#0" />
-                <element signature="e#3824#4130#0" />
-                <element signature="e#4173#4303#0" />
-                <element signature="e#4348#4507#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modul_Topo/FTEST01.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            <state relative-caret-position="110">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -114,19 +71,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EDIN_TRY03_120319.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/F04032019ML.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+            <state relative-caret-position="44">
+              <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -137,10 +85,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EDIN_TRY03_080319.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="50" column="48" lean-forward="true" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
+            <state relative-caret-position="2002">
+              <caret line="91" column="45" lean-forward="true" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/26032019_SVR_Model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1518">
+              <caret line="90" column="52" lean-forward="true" selection-start-line="90" selection-start-column="52" selection-end-line="90" selection-end-column="52" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+                <element signature="e#312#1079#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/26032019_RFR_Model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+                <element signature="e#322#1141#0" />
               </folding>
             </state>
           </provider>
@@ -150,7 +124,7 @@
         <entry file="file://$PROJECT_DIR$/Stack_Try02_15032019.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
-              <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -161,10 +135,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/21122018RUN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="10" column="100" lean-forward="true" selection-start-line="10" selection-start-column="100" selection-end-line="10" selection-end-column="100" />
+            <state>
+              <caret column="10" selection-start-column="10" selection-end-column="10" />
               <folding>
-                <element signature="e#673#776#0" />
+                <element signature="e#31#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modul_ML/F17122018ML.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1188">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -193,11 +179,14 @@
         <option value="$PROJECT_DIR$/EDIN_TRY03_120319.py" />
         <option value="$PROJECT_DIR$/Stack_Try01_14032019.py" />
         <option value="$PROJECT_DIR$/My_Function.py" />
-        <option value="$PROJECT_DIR$/Modul_ML/F17122018ML.py" />
         <option value="$PROJECT_DIR$/21122018RUN.py" />
         <option value="$PROJECT_DIR$/Stack_Try02_15032019.py" />
-        <option value="$PROJECT_DIR$/EDIN_TRY03_080319.py" />
         <option value="$PROJECT_DIR$/F04032019ML.py" />
+        <option value="$PROJECT_DIR$/EDIN_TRY04_190319.py" />
+        <option value="$PROJECT_DIR$/Modul_ML/F17122018ML.py" />
+        <option value="$PROJECT_DIR$/EDIN_TRY03_080319.py" />
+        <option value="$PROJECT_DIR$/26032019_RFR_Model.py" />
+        <option value="$PROJECT_DIR$/26032019_SVR_Model.py" />
       </list>
     </option>
   </component>
@@ -218,6 +207,11 @@
             <path>
               <item name="00PyCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="00PyCode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="00PyCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00PyCode" type="462c0819:PsiDirectoryNode" />
+              <item name="Modul_ML" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -241,8 +235,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.F04032019ML">
-    <configuration name="21122018RUN" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.26032019_RFR_Model">
+    <configuration name="26032019_RFR_Model" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="00PyCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -254,7 +248,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/21122018RUN.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/26032019_RFR_Model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="26032019_SVR_Model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="00PyCode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/26032019_SVR_Model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -284,6 +299,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="EDIN_TRY04_190319" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="00PyCode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/EDIN_TRY04_190319.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="F04032019ML" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="00PyCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -305,62 +341,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Stack_Try01_14032019" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="00PyCode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Stack_Try01_14032019.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Stack_Try02_15032019" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="00PyCode" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Stack_Try02_15032019.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.EDIN_TRY03_080319" />
-      <item itemvalue="Python.Stack_Try01_14032019" />
-      <item itemvalue="Python.Stack_Try02_15032019" />
-      <item itemvalue="Python.21122018RUN" />
       <item itemvalue="Python.F04032019ML" />
+      <item itemvalue="Python.EDIN_TRY04_190319" />
+      <item itemvalue="Python.26032019_SVR_Model" />
+      <item itemvalue="Python.26032019_RFR_Model" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.F04032019ML" />
+        <item itemvalue="Python.26032019_RFR_Model" />
+        <item itemvalue="Python.26032019_SVR_Model" />
         <item itemvalue="Python.EDIN_TRY03_080319" />
-        <item itemvalue="Python.21122018RUN" />
-        <item itemvalue="Python.Stack_Try02_15032019" />
-        <item itemvalue="Python.Stack_Try01_14032019" />
+        <item itemvalue="Python.EDIN_TRY04_190319" />
+        <item itemvalue="Python.F04032019ML" />
       </list>
     </recent_temporary>
   </component>
@@ -381,12 +375,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16069546" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14752372" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.74629194" weight="0.29501083" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.74629194" visible="true" weight="0.29501083" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35213676" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -484,15 +478,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data_Stack.tiff">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Data_Stack.tiff" />
     <entry file="file://$PROJECT_DIR$/#01FIRST_TESIS.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-440">
@@ -532,33 +521,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modul_Topo/FORESTS2020.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-            <element signature="e#138#159#0" />
-            <element signature="e#437#623#0" />
-            <element signature="e#656#840#0" />
-            <element signature="e#875#1119#0" />
-            <element signature="e#1146#2795#0" />
-            <element signature="e#2826#2858#0" />
-            <element signature="e#2888#2952#0" />
-            <element signature="e#2980#3271#0" />
-            <element signature="e#3297#3343#0" />
-            <element signature="e#3369#3415#0" />
-            <element signature="e#3442#3560#0" />
-            <element signature="e#3616#3737#0" />
-            <element signature="e#3824#4130#0" />
-            <element signature="e#4173#4303#0" />
-            <element signature="e#4348#4507#0" />
-          </folding>
+        <state relative-caret-position="352">
+          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EDIN_TRY03_120319.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modul_Topo/FTEST01.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        <state relative-caret-position="110">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -567,18 +545,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/F04032019ML.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        <state relative-caret-position="44">
+          <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/21122018RUN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+          <folding>
+            <element signature="e#31#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EDIN_TRY04_190319.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/My_Function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1892">
+          <caret line="34" column="78" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EDIN_TRY03_080319.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="50" column="48" lean-forward="true" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
+        <state relative-caret-position="2002">
+          <caret line="91" column="45" lean-forward="true" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
@@ -588,44 +593,42 @@
     <entry file="file://$PROJECT_DIR$/Stack_Try02_15032019.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
-          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/21122018RUN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="10" column="100" lean-forward="true" selection-start-line="10" selection-start-column="100" selection-end-line="10" selection-end-column="100" />
-          <folding>
-            <element signature="e#673#776#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EDIN_TRY03_120319.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modul_ML/F17122018ML.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        <state relative-caret-position="1188">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/My_Function.py">
+    <entry file="file://$PROJECT_DIR$/26032019_SVR_Model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="34" column="78" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="78" />
+        <state relative-caret-position="1518">
+          <caret line="90" column="52" lean-forward="true" selection-start-line="90" selection-start-column="52" selection-end-line="90" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#312#1079#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/26032019_RFR_Model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#322#1141#0" />
+          </folding>
         </state>
       </provider>
     </entry>
