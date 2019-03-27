@@ -2,11 +2,11 @@ from __future__ import print_function, division
 from osgeo import gdal, gdal_array
 from sklearn.svm import SVR
 from sklearn.preprocessing import MinMaxScaler
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from Modul_ML.F17122018ML import F2020ML
 from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
 
 def saved_data_TIF(in_path1, out_path1, pred_model, name):
     ## Make data prediction to TIF file
@@ -34,7 +34,7 @@ def saved_data_TIF(in_path1, out_path1, pred_model, name):
 gdal.UseExceptions()
 gdal.AllRegister()
 
-# Load data citra Landsat
+## Load data citra Landsat
 path1 = 'D:/GitFolder1611/GitTesis/TIF RAW/'
 img_ds = gdal.Open(path1 + 'Cidanau_Stack_150319.tiff', gdal.GA_ReadOnly)
 
@@ -49,9 +49,9 @@ for b in range(img.shape[2]):
 # plt.imshow(img[:, :, 4], cmap = plt.cm.Greys_r)
 # plt.title('DATA LandSat')
 
-# Load Dataframe for make the model
+## Load Dataframe for make the model
 path2 = 'D:/00RCode/Result/Data Sumatera/Data Sumatera No_Normalize/'
-loadFile = pd.read_excel(path2 + 'Cidanau_Join_LINE6_61.18.xlsx')
+loadFile = pd.read_excel(path2 + 'Cidanau_Join_LINE6_7_72.15.xlsx')
 select_col = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 select_row = 'frci'
 
@@ -59,9 +59,9 @@ dfx = pd.DataFrame(loadFile, columns=select_col)
 dfy = np.asarray(loadFile[select_row])
 
 X_train, X_test, y_train, y_test = train_test_split(dfx, dfy, test_size=0.3, random_state=5)
-# sc = MinMaxScaler()
-# X_train = sc.fit_transform(X_train)
-# X_test = sc.transform(X_test)
+sc = MinMaxScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
 
 best_score = 0
 for C in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
@@ -91,8 +91,8 @@ print('Reshaped from {o} to {n}'.format(o=img.shape, n=img_as_array.shape))
 pred_model2data = clfSVR_Model.predict(img_as_array)
 pred_model2data = pred_model2data.reshape(img[:, :, 0].shape)
 
-out_path = 'D:/'
-saved_data_TIF(path1, out_path, pred_model2data, name='Tri_01')
+out_path = 'D:/00AllResult/Data Tiff/'
+saved_data_TIF(path1, out_path, pred_model2data, name='Tri_02_LINE_6_7')
 
 print(best_parm, 'Acc Model :', Acc_Model, '++++++', 'RMSE Model :', RMSE_Model)
 # plt.imshow(class_prediction, interpolation='none')

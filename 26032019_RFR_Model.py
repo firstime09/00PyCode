@@ -1,10 +1,14 @@
 from __future__ import print_function, division
 from osgeo import gdal, gdal_array
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.tree import export_graphviz
 from sklearn.preprocessing import MinMaxScaler
 import matplotlib.pyplot as plt
+import pydot, os
 import numpy as np
 import pandas as pd
+from IPython.display import Image
+from subprocess import call
 from Modul_ML.F17122018ML import F2020ML
 from sklearn.model_selection import train_test_split
 
@@ -58,7 +62,7 @@ select_row = 'frci'
 dfx = pd.DataFrame(loadFile, columns=select_col)
 dfy = np.asarray(loadFile[select_row])
 
-X_train, X_test, y_train, y_test = train_test_split(dfx, dfy, test_size=0.3, random_state=5)
+X_train, X_test, y_train, y_test = train_test_split(dfx, dfy, test_size=0.3, random_state=10)
 # sc = MinMaxScaler()
 # X_train = sc.fit_transform(X_train)
 # X_test = sc.transform(X_test)
@@ -81,6 +85,14 @@ Acc_Model = clfRFR_Model.score(X_test, y_test)
 y_pred = clfRFR_Model.predict(X_test)
 RMSE_Model = F2020ML.F2020_RMSE(y_test, y_pred)
 
+## Pull out one tree from the model
+# tree = clfRFR_Model.estimators_[5]
+# export_graphviz(tree, out_file='tree.dot')
+# # call(['dot', '-Tpng', 'tree.dot', '-o', 'tree.png', '-Gdpi=600'])
+# # Image(filename='tree.png')
+# (graph, ) = pydot.graph_from_dot_file('tree.dot')
+# graph.write_png('tree.png')
+
 ## Prediction model with data image
 new_shape = (img.shape[0] * img.shape[1], img.shape[2])
 img_as_array = img[:, :, :6].reshape(new_shape)
@@ -89,7 +101,7 @@ print('Reshaped from {o} to {n}'.format(o=img.shape, n=img_as_array.shape))
 pred_model2data = clfRFR_Model.predict(img_as_array)
 pred_model2data = pred_model2data.reshape(img[:, :, 0].shape)
 
-out_path = 'D:/'
+out_path = 'D:/00AllResult/Data Tiff/'
 saved_data_TIF(path1, out_path, pred_model2data, name='Tri_03')
 
 print(best_parm, 'Acc Model :', Acc_Model, '++++++', 'RMSE Model :', RMSE_Model)

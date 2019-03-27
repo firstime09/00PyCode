@@ -7,8 +7,31 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
 class allFunction:
+    def saved_data_TIF(in_path1, out_path1, pred_model, data_tiff, name): #--- For map of array data (27/03-2019)
+        """ This function is used to produce output of array as a map """
+        saved_data = (name + "_Data_FRCI.TIF")
+        output_path = (out_path1 + saved_data)
+        raster = (in_path1 + data_tiff)   # You must have stack tiff data
+        in_path = gdal.Open(raster)
+        in_array = pred_model
+        ## global proj, geotrans, row, col
+        proj = in_path.GetProjection()
+        geotrans = in_path.GetGeoTransform()
+        row = in_path.RasterYSize
+        col = in_path.RasterXSize
+        driver = gdal.GetDriverByName("GTiff")
+        outdata = driver.Create(output_path, col, row, 1, gdal.GDT_CFloat64)
+        outband = outdata.GetRasterBand(1)
+        outband.SetNoDataValue(-9999)
+        outband.WriteArray(in_array)
+        outdata.SetGeoTransform(geotrans)  # Georeference the image
+        outdata.SetProjection(proj)  # Write projection information
+        outdata.FlushCache()
+        outdata = None
+        return outdata
+
     def export_array(in_path, in_array, output_path): #--- For map of array from Mr. Sahid (13/12-2018)
-        """This function is used to produce output of array as a map."""
+        """ This function is used to produce output of array as a map."""
         global proj, geotrans, row, col
         proj        = in_path.GetProjection()
         geotrans    = in_path.GetGeoTransform()
@@ -23,6 +46,7 @@ class allFunction:
         outdata.SetProjection(proj) # Write projection information
         outdata.FlushCache()
         outdata = None
+        return outdata
 
     def rSquared(ActualY, PredictY): #--- value of r^2 in statistic (04/12-2018)
         rScores = (1 - sum((ActualY - PredictY)**2) / sum((ActualY - ActualY.mean(axis=0))**2))
