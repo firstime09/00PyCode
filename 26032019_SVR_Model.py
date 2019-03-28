@@ -51,7 +51,7 @@ for b in range(img.shape[2]):
 
 ## Load Dataframe for make the model
 path2 = 'D:/00RCode/Result/Data Sumatera/Data Sumatera No_Normalize/'
-loadFile = pd.read_excel(path2 + 'Cidanau_Join_LINE6_7_72.15.xlsx')
+loadFile = pd.read_excel(path2 + 'Cidanau_Join_LINE6_61.18_NEW.xlsx')
 select_col = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 select_row = 'frci'
 
@@ -92,7 +92,7 @@ pred_model2data = clfSVR_Model.predict(img_as_array)
 pred_model2data = pred_model2data.reshape(img[:, :, 0].shape)
 
 out_path = 'D:/00AllResult/Data Tiff/'
-saved_data_TIF(path1, out_path, pred_model2data, name='Tri_02_LINE_6_7')
+saved_data_TIF(path1, out_path, pred_model2data, name='28032019_Try_01')
 
 print(best_parm, 'Acc Model :', Acc_Model, '++++++', 'RMSE Model :', RMSE_Model)
 # plt.imshow(class_prediction, interpolation='none')
