@@ -39,7 +39,7 @@ gdal.UseExceptions()
 gdal.AllRegister()
 
 ## Load data citra Landsat
-path1 = 'D:/GitFolder1611/GitTesis/TIF RAW/'
+path1 = 'D:/GitHub/GitTesis/TIF RAW/'
 img_ds = gdal.Open(path1 + 'Cidanau_Stack_150319.tiff', gdal.GA_ReadOnly)
 
 img = np.zeros((img_ds.RasterYSize, img_ds.RasterXSize, img_ds.RasterCount),
@@ -54,8 +54,8 @@ for b in range(img.shape[2]):
 # plt.title('DATA LandSat')
 
 ## Load Dataframe for make the model
-path2 = 'D:/00RCode/Result/Data Sumatera/Data Sumatera No_Normalize/'
-loadFile = pd.read_excel(path2 + 'Cidanau_Join_LINE6_61.18.xlsx')
+path2 = 'D:/00RCode/Result/01042019_JOIN_DF_LINE_1.2/'
+loadFile = pd.read_excel(path2 + 'CIDANAU_LINE_1_2_SUMATERA_77_14.xlsx')
 select_col = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 select_row = 'frci'
 
@@ -101,8 +101,8 @@ print('Reshaped from {o} to {n}'.format(o=img.shape, n=img_as_array.shape))
 pred_model2data = clfRFR_Model.predict(img_as_array)
 pred_model2data = pred_model2data.reshape(img[:, :, 0].shape)
 
-out_path = 'D:/00AllResult/Data Tiff/'
-saved_data_TIF(path1, out_path, pred_model2data, name='Tri_03')
+path3 = 'D:/00RCode/Result/01042019_JOIN_DF_LINE_1.2/TIff File/'
+saved_data_TIF(path1, path3, pred_model2data, name='02042019_RFR_03')
 
 print(best_parm, 'Acc Model :', Acc_Model, '++++++', 'RMSE Model :', RMSE_Model)
 

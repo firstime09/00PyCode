@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 class F2020ML:
     def plot_data(DataX, DataY): #--- Data Visualization 2D 16/01-2019
         plt.plot(DataX, DataY)
-        plt.scatter(DataX, DataY, label="Data", marker="*", s=30)
+        plt.scatter(DataX, DataY)
         plt.title('Data Visualization')
         plt.xlabel('Data X')
         plt.ylabel('Data Y')
@@ -53,7 +53,7 @@ class F2020ML:
             read_dem.append(band_dem.GetRasterBand(1).ReadAsArray().astype(float))
         return (my_dict, read_dem)
 
-    def F2020_DF(dframe):
+    def F2020_DF(dframe): ## For present the frequency from data-frame
         Load_class = 'Class'
         dclass = numpy.asarray(dframe[Load_class])
         df1 = pandas.Series(dclass).value_counts().reset_index().sort_values('index').reset_index(drop=True)
