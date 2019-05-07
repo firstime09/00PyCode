@@ -55,7 +55,7 @@ for b in range(img.shape[2]):
 
 ## Load Dataframe for make the model
 path2 = 'D:/00RCode/Result/Data Sumatera/Data Sumatera No_Normalize/'
-loadFile = pd.read_excel(path2 + 'Cidanau_Join_LINE6_61.18.xlsx')
+loadFile = pd.read_excel(path2 + 'Cidanau_Join_LINE6.xlsx')
 select_col = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 select_row = 'frci'
 
@@ -68,8 +68,8 @@ X_train, X_test, y_train, y_test = train_test_split(dfx, dfy, test_size=0.3, ran
 # X_test = sc.transform(X_test)
 
 best_score = 0
-for n_estimate in [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
-    for r_state in [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
+for n_estimate in [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 150, 200]:
+    for r_state in [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 150, 200]:
         clfRFR = RandomForestRegressor(n_estimators=n_estimate, random_state=r_state)
         clfRFR.fit(X_train, y_train)
         score = clfRFR.score(X_test, y_test)
@@ -101,8 +101,8 @@ print('Reshaped from {o} to {n}'.format(o=img.shape, n=img_as_array.shape))
 pred_model2data = clfRFR_Model.predict(img_as_array)
 pred_model2data = pred_model2data.reshape(img[:, :, 0].shape)
 
-out_path = 'D:/00AllResult/Data Tiff/'
-saved_data_TIF(path1, out_path, pred_model2data, name='Tri_03')
+out_path = 'D:/00RCode/Result/Data Sumatera/Data Sumatera No_Normalize/'
+saved_data_TIF(path1, out_path, pred_model2data, name='06052019_RFR_CDU_Join_LINE_6_NEW')
 
 print(best_parm, 'Acc Model :', Acc_Model, '++++++', 'RMSE Model :', RMSE_Model)
 
