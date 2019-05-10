@@ -28,7 +28,7 @@ stack_layer = gdal.Translate(file_tif, vrt)
 #####
 AOI_1 = gdal.Open(file_tif)
 AOI_2 = AOI_1.GetRasterBand(1).ReadAsArray()
-AOI= AOI_2 > 0
+AOI = AOI_2 > 0
 
 ####
 img_ds = gdal.Open(file_tif, gdal.GA_ReadOnly)

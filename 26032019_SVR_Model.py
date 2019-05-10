@@ -4,7 +4,7 @@ from sklearn.svm import SVR
 from sklearn.preprocessing import MinMaxScaler
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
+import glob, pandas as pd
 from Modul_ML.F17122018ML import F2020ML
 from sklearn.model_selection import train_test_split
 
@@ -12,7 +12,7 @@ def saved_data_TIF(in_path1, out_path1, pred_model, name):
     ## Make data prediction to TIF file
     saved_data = (name + "_Data_FRCI.TIF")
     output_path = (out_path1 + saved_data)
-    raster = in_path1 + 'TOA MANADOData_Manado_07052019.tiff'
+    raster = in_path1 + 'Manado_stack.tif'
     in_path = gdal.Open(raster)
     in_array = pred_model
     ## global proj, geotrans, row, col
@@ -21,7 +21,7 @@ def saved_data_TIF(in_path1, out_path1, pred_model, name):
     row = in_path.RasterYSize
     col = in_path.RasterXSize
     driver = gdal.GetDriverByName("GTiff")
-    outdata = driver.Create(output_path, col, row, 1, gdal.GDT_CFloat64)
+    outdata = driver.Create(output_path, col, row, 1, gdal.GDT_Float32)
     outband = outdata.GetRasterBand(1)
     outband.SetNoDataValue(-9999)
     outband.WriteArray(in_array)
@@ -34,9 +34,25 @@ def saved_data_TIF(in_path1, out_path1, pred_model, name):
 gdal.UseExceptions()
 gdal.AllRegister()
 
+
+#### stack layer data
+path_layer = r"F:\All Data Forests2020\Path112Row56 Manado\TOA MANADO\COBA"
+file_layer = glob.glob(path_layer + "/*.tif")
+
+# file_vrt = path_layer + "/stacked.vrt"
+file_tif = path_layer + "/Manado_stack.tif"
+# vrt = gdal.BuildVRT(file_vrt, file_layer, separate=True)
+# stack_layer = gdal.Translate(file_tif, vrt)
+
+
+#####
+AOI_1 = gdal.Open(file_tif)
+AOI_2 = AOI_1.GetRasterBand(1).ReadAsArray()
+AOI = AOI_2 > 0
+
 ## Load data citra Landsat
-path1 = 'F:/All Data Forests2020/Path112Row56 Manado/TOA MANADO/'
-img_ds = gdal.Open(path1 + 'TOA MANADOData_Manado_07052019.tiff', gdal.GA_ReadOnly)
+path1 = r'D:\GitFolder1611\GitTesis\TIF RAW\stack'
+img_ds = gdal.Open(path1 + '/cidanau_stack.tif', gdal.GA_ReadOnly)
 
 img = np.zeros((img_ds.RasterYSize, img_ds.RasterXSize, img_ds.RasterCount),
                gdal_array.GDALTypeCodeToNumericTypeCode(img_ds.GetRasterBand(1).DataType))
@@ -50,8 +66,8 @@ for b in range(img.shape[2]):
 # plt.title('DATA LandSat')
 
 ## Load Dataframe for make the model
-path2 = 'D:/00RCode/Result/Data Sumatera/Data Sumatera No_Normalize/'
-loadFile = pd.read_excel(path2 + 'Cidanau_Join_LINE6.xlsx')
+path2 = r"D:\00RCode\Result\Data Sumatera\Data Sumatera No_Normalize"
+loadFile = pd.read_excel(path2 + '/Cidanau_Join_LINE6_61.18.xlsx')
 select_col = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 select_row = 'frci'
 
@@ -90,10 +106,12 @@ print('Reshaped from {o} to {n}'.format(o=img.shape, n=img_as_array.shape))
 
 pred_model2data = clfSVR_Model.predict(img_as_array)
 pred_model2data = pred_model2data.reshape(img[:, :, 0].shape)
+pred_model2data[pred_model2data < 0] = 0.01
+final_pred = pred_model2data * AOI
 
 # F:\All Data Forests2020\Path112Row56 Manado\TOA MANADO
-out_path = 'F:/All Data Forests2020/Path112Row56 Manado/TOA MANADO/'
-saved_data_TIF(path1, out_path, pred_model2data, name='07052019_SVR_CDU_Join_LINE_6_Manado')
+out_path = 'F:/All Data Forests2020/Path112Row56 Manado/TOA MANADO/COBA'
+saved_data_TIF(path1, out_path, final_pred, name='3_SVR_Data_Manado')
 
 print(best_parm, 'Acc Model :', Acc_Model, '++++++', 'RMSE Model :', RMSE_Model)
 # plt.imshow(class_prediction, interpolation='none')

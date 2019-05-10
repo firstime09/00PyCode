@@ -6,12 +6,12 @@ from Modul_Topo.FORESTS2020 import allFunc
 from Modul_ML.F17122018ML import F2020ML
 
 # path = 'C:/Users/user/Dropbox/FORESTS2020/00AllData/Dataframe Sumatra/'
-path = 'D:/00RCode/Result/Data Sumatera/Data Sumatera No_Normalize/'
-dfxlx = pd.read_excel(path + 'Cidanau_Join_LINE6.xlsx')
-# column = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7', 'DEM', 'ASPECT_R', 'SLOPE_R']
-column = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
+path = r"D:\Bang Wim\SET_SAMPLES"
+dfxlx = pd.read_excel(path + '/All_Data_Set_Bg.Wim.xlsx')
+column = ['b2', 'b3', 'b4', 'b5', 'b6', 'b7']
+# column = ['Band_2', 'Band_3', 'Band_4', 'Band_5', 'Band_6', 'Band_7']
 # column = ['PC1', 'PC2']
-target = 'frci'
+target = 'FRCI'
 # target = 'dfy'
 dfX = pd.DataFrame(dfxlx, columns=column)
 dfY = np.asarray(dfxlx[target])
