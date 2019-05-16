@@ -37,11 +37,11 @@ gdal.AllRegister()
 
 
 #### stack layer data
-path_layer = r"D:\TIFF DATA\New DataFrame\Cidanau 13052019\TIFF FILE\Erdas Stack Cidanau Sesudah"
+path_layer = r"D:\TIFF DATA\SUMATERA\GEE_WA_SUMSEL\SUMSEL 1\L8_SMT_1_6_SEBELUM"
 file_layer = glob.glob(path_layer + "/*.tif")
 
 file_vrt = path_layer + "/stacked.vrt"
-file_tif = path_layer + "/CIDANAU_STACK_Sesudah_15052019_1.tif"
+file_tif = path_layer + "/SMT_1_6_Sebelum_16052019.tif"
 vrt = gdal.BuildVRT(file_vrt, file_layer, separate=True)
 stack_layer = gdal.Translate(file_tif, vrt)
 
@@ -107,6 +107,15 @@ Acc_Model = clfSVR_Model.score(X_test, y_test)
 y_pred = clfSVR_Model.predict(X_test)
 RMSE_Model = F2020ML.F2020_RMSE(y_test, y_pred)
 
+## Make data frame from predic model
+data = {'Predict':y_pred, 'Actual':y_test}
+test_df1 = pd.DataFrame(data)
+test_df1.head(5)
+path = r"D:\TIFF DATA\SUMATERA\GEE_WA_SUMSEL\SUMSEL 1"
+write = pd.ExcelWriter(path + '/Data_Cidanau.xlsx', engine='xlsxwriter')
+test_df1.to_excel(write, sheet_name='Sheet1')
+write.save()
+
 ## Prediction model with data image
 new_shape = (img.shape[0] * img.shape[1], img.shape[2])
 img_as_array = img[:, :, :6].reshape(new_shape)
@@ -117,9 +126,11 @@ pred_model2data = pred_model2data.reshape(img[:, :, 0].shape)
 pred_model2data[pred_model2data < 0] = 0.01
 final_pred = pred_model2data * AOI
 
+
 # F:\All Data Forests2020\Path112Row56 Manado\TOA MANADO
-out_path = r"D:\TIFF DATA\New DataFrame\Cidanau 13052019\TIFF FILE\Erdas Stack Cidanau Sesudah"
-saved_data_TIF(out_path, final_pred, name='SVR_Data_CIDANAU', ras=file_tif)
+# out_path = r"D:\TIFF DATA\New DataFrame\Cidanau 13052019\TIFF FILE\Erdas Stack Cidanau Sesudah"
+out_path = path_layer
+saved_data_TIF(out_path, final_pred, name='_SVR_Data_', ras=file_tif)
 
 print(best_parm, 'Acc Model :', Acc_Model, '++++++', 'RMSE Model :', RMSE_Model)
 # plt.imshow(class_prediction, interpolation='none')
