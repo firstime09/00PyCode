@@ -8,11 +8,12 @@ import glob, pandas as pd
 from Modul_ML.F17122018ML import F2020ML
 from sklearn.model_selection import train_test_split
 
-def saved_data_TIF(in_path1, out_path1, pred_model, name):
+def saved_data_TIF(out_path1, pred_model, name, ras):
     ## Make data prediction to TIF file
     saved_data = (name + "_Data_FRCI.TIF")
     output_path = (out_path1 + saved_data)
-    raster = in_path1 + 'Manado_stack.tif'
+    # raster = in_path1 + '/CIDANAU_STACK_13052019.tif'
+    raster = ras
     in_path = gdal.Open(raster)
     in_array = pred_model
     ## global proj, geotrans, row, col
@@ -36,13 +37,13 @@ gdal.AllRegister()
 
 
 #### stack layer data
-path_layer = r"F:\All Data Forests2020\Path112Row56 Manado\TOA MANADO\COBA"
+path_layer = r"D:\TIFF DATA\New DataFrame\Cidanau 13052019\TIFF FILE\Erdas Stack Cidanau Sesudah"
 file_layer = glob.glob(path_layer + "/*.tif")
 
-# file_vrt = path_layer + "/stacked.vrt"
-file_tif = path_layer + "/Manado_stack.tif"
-# vrt = gdal.BuildVRT(file_vrt, file_layer, separate=True)
-# stack_layer = gdal.Translate(file_tif, vrt)
+file_vrt = path_layer + "/stacked.vrt"
+file_tif = path_layer + "/CIDANAU_STACK_Sesudah_15052019_1.tif"
+vrt = gdal.BuildVRT(file_vrt, file_layer, separate=True)
+stack_layer = gdal.Translate(file_tif, vrt)
 
 
 #####
@@ -51,9 +52,14 @@ AOI_2 = AOI_1.GetRasterBand(1).ReadAsArray()
 AOI = AOI_2 > 0
 
 ## Load data citra Landsat
-path1 = r'D:\GitFolder1611\GitTesis\TIF RAW\stack'
-img_ds = gdal.Open(path1 + '/cidanau_stack.tif', gdal.GA_ReadOnly)
+# path1 = r'D:\GitFolder1611\GitTesis\TIF RAW\stack'
+# img_ds = gdal.Open(path1 + '/cidanau_stack.tif', gdal.GA_ReadOnly)
+#
+# img = np.zeros((img_ds.RasterYSize, img_ds.RasterXSize, img_ds.RasterCount),
+#                gdal_array.GDALTypeCodeToNumericTypeCode(img_ds.GetRasterBand(1).DataType))
 
+
+img_ds = gdal.Open(file_tif, gdal.GA_ReadOnly)
 img = np.zeros((img_ds.RasterYSize, img_ds.RasterXSize, img_ds.RasterCount),
                gdal_array.GDALTypeCodeToNumericTypeCode(img_ds.GetRasterBand(1).DataType))
 # print(img)
@@ -64,6 +70,8 @@ for b in range(img.shape[2]):
 # plt.subplot(121)
 # plt.imshow(img[:, :, 4], cmap = plt.cm.Greys_r)
 # plt.title('DATA LandSat')
+plt.imshow(img[:, :, 4], cmap = plt.cm.Greys_r)
+plt.title('DATA LandSat')
 
 ## Load Dataframe for make the model
 path2 = r"D:\00RCode\Result\Data Sumatera\Data Sumatera No_Normalize"
@@ -110,8 +118,8 @@ pred_model2data[pred_model2data < 0] = 0.01
 final_pred = pred_model2data * AOI
 
 # F:\All Data Forests2020\Path112Row56 Manado\TOA MANADO
-out_path = 'F:/All Data Forests2020/Path112Row56 Manado/TOA MANADO/COBA'
-saved_data_TIF(path1, out_path, final_pred, name='3_SVR_Data_Manado')
+out_path = r"D:\TIFF DATA\New DataFrame\Cidanau 13052019\TIFF FILE\Erdas Stack Cidanau Sesudah"
+saved_data_TIF(out_path, final_pred, name='SVR_Data_CIDANAU', ras=file_tif)
 
 print(best_parm, 'Acc Model :', Acc_Model, '++++++', 'RMSE Model :', RMSE_Model)
 # plt.imshow(class_prediction, interpolation='none')
