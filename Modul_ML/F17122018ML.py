@@ -32,6 +32,7 @@ class F2020ML:
         outdata.SetProjection(proj) # Write projection information
         outdata.FlushCache()
         outdata = None
+        return outdata
 
     def readRaster(path, dem):
         # Read Data Landsat 8 and Sentinel 2
