@@ -11,6 +11,7 @@ class Raster_Func():
         file_tif = path + (name + ".tif")
         vrt = gdal.BuildVRT(file_vrt, file_layer, separate=True)
         stack_layer = gdal.Translate(file_tif, vrt)
+        # outData = output_path + stack_layer
         return stack_layer
 
     def saved_data_TIF(out_path1, pred_model, name, ras):

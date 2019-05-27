@@ -1,7 +1,7 @@
 import math, numpy, pandas, os, glob
 from osgeo import gdal
 from matplotlib import pyplot as plt
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.svm import SVR
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
@@ -80,14 +80,14 @@ class F2020ML:
 
     def F2020_SVR(dataX, dataY, tsize, rstate): #--- Model SVR kernel radial basis function FORESTS2020
         X_train, X_test, y_train, y_test = train_test_split(dataX, dataY, test_size=tsize, random_state=rstate)
-        sc = StandardScaler()
-        # sc.fit(X_train)
+        sc = MinMaxScaler()
+        sc.fit(X_train)
         X_train = sc.fit_transform(X_train)
         X_test = sc.transform(X_test)
         best_score = 0
-        for C in [0.001, 0.01, 0.1, 1, 10, 100]:
-            for gamma in [0.001, 0.01, 0.1, 1, 10, 100]:
-                for epsilon in [0.001, 0.01, 0.1, 1, 10, 100]:
+        for C in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+            for gamma in [0.01, 0.1, 0.2, 0.3, 0.4, 0.5, 1]:
+                for epsilon in [0.001, 0.01, 0.1, 0.2, 0.3, 0.4, 0.5]:
                     # Train Model SVR
                     clfSVR = SVR(kernel='rbf', C=C, gamma=gamma, epsilon=epsilon)
                     clfSVR.fit(X_train, y_train)
@@ -97,9 +97,38 @@ class F2020ML:
                         best_parameters = {'C': C, 'gamma': gamma, 'epsilon': epsilon}
         return(best_score, best_parameters)
 
+    def SVR_Model(dataX, dataY, test_size, r_state):
+        X_train, X_test, y_train, y_test = train_test_split(dataX, dataY, test_size=test_size, random_state=r_state)
+        # sc = MinMaxScaler()
+        # X_train = sc.fit_transform(X_train)
+        # X_test = sc.transform(X_test)
+
+        best_score = 0
+        for C in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+            for gamma in [0.01, 0.1, 0.2, 0.3, 0.4, 0.5, 1]:
+                for epsilon in [0.001, 0.01, 0.1, 0.2, 0.3, 0.4, 0.5]:
+                    calfSVR = SVR(kernel='rbf', C=C, gamma=gamma, epsilon=epsilon)
+                    calfSVR.fit(X_train, y_train)
+                    score = calfSVR.score(X_test, y_test)
+                    if score > best_score:
+                        best_score = score
+                        best_C = C
+                        best_gam = gamma
+                        best_eps = epsilon
+                        # best_parm = {'C': best_C, 'Gamma': best_gam, 'Epsilon': best_eps}
+
+        calfSVR_Model = SVR(kernel='rbf', C=best_C, epsilon=best_eps, gamma=best_gam)
+        calfSVR_Model.fit(X_train, y_train)
+        # calfSVR_Score = calfSVR_Model.score(X_test, y_test)
+        # y_pred = calfSVR_Model.predict(X_test)
+        # RMSE_Model = F2020ML.F2020_RMSE(y_test, y_pred)
+        # R2_Model = F2020ML.F2020_RSQRT(y_test, y_pred)
+        # Model = {'RMSE': RMSE_Model, 'R^2': R2_Model}
+        return(calfSVR_Model)
+
     def F2020_RFR(dataX, dataY, tsize, rstate): #--- Random Forest Regressor Model
         X_train, X_test, y_train, y_test = train_test_split(dataX, dataY, test_size=tsize, random_state=rstate)
-        sc = StandardScaler()
+        sc = MinMaxScaler()
         X_train = sc.fit_transform(X_train)
         X_test = sc.transform(X_test)
         best_score = 0
