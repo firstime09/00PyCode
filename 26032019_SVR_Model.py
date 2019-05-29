@@ -37,7 +37,7 @@ gdal.AllRegister()
 
 
 #### stack layer data
-path_layer = r"D:\TIFF DATA\SUMATERA\GEE_WA_SUMSEL\SUMSEL 1\L8_SMT_1_6_SEBELUM"
+path_layer = r"D:\TIFF DATA\SUMATERA\GEE_WA_SUMSEL\SUMSEL 4\L8_SMT_4_6_SEBELUM"
 file_layer = glob.glob(path_layer + "/*.tif")
 
 file_vrt = path_layer + "/stacked.vrt"
