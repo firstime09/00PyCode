@@ -46,3 +46,20 @@ def display(candidate, startTime):
     timeDiff = datetime.datetime.now() - startTime
     fitness = getFitness(candidate, target)
     print("%s\t%i\t%s" % (candidate, fitness, str(timeDiff)))
+
+geneset = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!."
+target = "BASUKI"    
+
+bestParent = generateParent(len(target))
+bestFitness = getFitness(bestParent, target)
+startTime = datetime.datetime.now()
+display(bestParent, startTime)
+ 
+while bestFitness < len(bestParent):
+   child = mutate(bestParent)
+   childFitness = getFitness(child, target)
+ 
+   if childFitness > bestFitness:
+      bestFitness = childFitness
+      bestParent = child
+      display(bestParent, startTime)
